@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-secondary-900 text-primary-400 antialiased;
+  }
+
+  [dir="rtl"] input[type="number"] {
+    text-align: right;
+  }
+
+  [dir="rtl"] input[type="text"],
+  [dir="rtl"] input[type="email"] {
+    text-align: right;
+  }
+
+  [dir="rtl"] .ltr {
+    direction: ltr;
+    text-align: left;
+  }
+
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+}
+
+/* Animations */
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
